@@ -1,5 +1,6 @@
 {
   "expo": {
+    "jsEngine": "hermes",
     "name": "cropfare",
     "slug": "cropfare",
     "version": "1.0.0",
@@ -12,7 +13,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#1A531C"
     },
-    "plugins": ["expo-community-flipper"],
+    "plugins": [
+      "expo-community-flipper"
+    ],
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -20,13 +23,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tomislav.stampfel.cropfare"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.tomislav.stampfel.cropfare"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"

@@ -4,11 +4,14 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
+    "start:dev": "expo start --dev-client",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "preview:build": "eas build --profile=preview",
+    "dev:build": "eas build --profile=devclient"
   },
   "jest": {
     "preset": "jest-expo"
@@ -23,6 +26,7 @@
     "expo-asset": "~8.5.0",
     "expo-community-flipper": "^45.1.0",
     "expo-constants": "~13.1.1",
+    "expo-dev-client": "~1.0.0",
     "expo-font": "~10.1.0",
     "expo-linking": "~3.1.0",
     "expo-splash-screen": "~0.15.1",
