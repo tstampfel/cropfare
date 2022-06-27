@@ -48,7 +48,7 @@ export default function Navigation({
  */
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-function RootNavigator() {
+const RootNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -66,7 +66,7 @@ function RootNavigator() {
       </Stack.Group>
     </Stack.Navigator>
   );
-}
+};
 
 /**
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.

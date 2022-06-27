@@ -1,7 +1,7 @@
 {
   "expo": {
     "jsEngine": "hermes",
-    "name": "cropfare",
+    "name": "CropFare",
     "slug": "cropfare",
     "version": "1.0.0",
     "orientation": "portrait",

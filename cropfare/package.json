@@ -16,6 +16,7 @@
   "jest": {
     "preset": "jest-expo"
   },
+  "resolutions": { "@types/react": "~17.0.21" },
   "dependencies": {
     "@apollo/client": "^3.6.8",
     "@expo/vector-icons": "^13.0.0",
