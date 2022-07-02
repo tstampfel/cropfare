@@ -14,6 +14,14 @@ import {
   gql,
 } from "@apollo/client";
 
+import * as Sentry from "sentry-expo";
+
+Sentry.init({
+  dsn: "https://1ea3c910775548bd9e57f317b209ce53@o1300250.ingest.sentry.io/6534414",
+  enableInExpoDevelopment: true,
+  debug: true, // If `true`, Sentry will try to print out useful debugging information if something goes wrong with sending the event. Set it to `false` in production
+});
+
 export default function App() {
   if (__DEV__) {
     connectToDevTools({
@@ -28,18 +36,6 @@ export default function App() {
     uri: "https://48p1r2roz4.sse.codesandbox.io",
     cache: new InMemoryCache(),
   });
-
-  // client
-  //   .query({
-  //     query: gql`
-  //       query GetRates {
-  //         rates(currency: "USD") {
-  //           currency
-  //         }
-  //       }
-  //     `,
-  //   })
-  //   .then((result) => console.log(result));
 
   if (!isLoadingComplete) {
     return null;

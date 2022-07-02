@@ -14,7 +14,7 @@
       "backgroundColor": "#1A531C"
     },
     "plugins": [
-      "expo-community-flipper"
+      "sentry-expo"
     ],
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -28,13 +28,25 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.tomislav.stampfel.cropfare"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "cropfare",
+            "project": "cropfare_app",
+            "authToken": "16e72f205b6c4ddb8ca9679734fb4ae95d5b6b2edb1f408c933ef05b919a01ff"
+          }
+        }
+      ]
     }
   }
 }
