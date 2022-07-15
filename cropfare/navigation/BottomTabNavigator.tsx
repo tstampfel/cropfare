@@ -21,22 +21,24 @@ export function BottomTabNavigator() {
       initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
+        headerShown: false,
       }}
     >
       <BottomTab.Screen
         name="Home"
         component={HomeScreen}
-        options={({ navigation }: RootTabScreenProps<"Home">) => ({
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        })}
+        options={{ title: "Something" }}
+        // options={({ navigation }: RootTabScreenProps<"Home">) => ({
+        //   tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        // })}
       />
       <BottomTab.Screen
         name="TabTwo"
         component={TabTwoScreen}
-        options={{
-          title: "Tab Two",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
+        // options={{
+        //   title: "Tab Two",
+        //   tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        // }}
       />
     </BottomTab.Navigator>
   );

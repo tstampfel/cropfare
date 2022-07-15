@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   contentWrapper: {
-    flex: 1,
+    flexGrow: 1,
   },
   safeAreaView: {
     flex: 1,
