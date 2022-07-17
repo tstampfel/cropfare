@@ -1,7 +1,10 @@
-import { FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 import TopBarImage from "./../../assets/svgs/top-bar.svg";
 import BarText from "../../components/top-bar/BarText";
 import SearchIcon from "./SearchIcon";
+import SearchSelectionDisplay, {
+  SearchCategory,
+} from "./SearchSelectionDisplay";
 
 interface TopBarProps {
   text: string;
@@ -19,6 +22,10 @@ const TopBar: FunctionComponent<TopBarProps> = ({
       <TopBarImage />
       <BarText text={text} name={name} />
       <SearchIcon setIsSearchWindowVisible={setIsSearchWindowVisible} />
+      <SearchSelectionDisplay
+        searchText={`"Grapes"`}
+        searchCategory={SearchCategory.DIARY}
+      />
     </>
   );
 };

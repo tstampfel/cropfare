@@ -19,18 +19,27 @@ const SearchIcon: FunctionComponent<SearchIconProps> = ({
   setIsSearchWindowVisible,
 }: SearchIconProps) => {
   const [windowWidth, windowHeight] = useDimensions();
-  const rotation = useSharedValue(0);
+  const scaleY = useSharedValue(1);
+  const scaleX = useSharedValue(1);
   const ANGLE = 4;
   const animatedStyle = useAnimatedStyle(() => {
     return {
-      transform: [{ rotateZ: `${rotation.value}deg` }],
+      transform: [{ scaleY: scaleY.value }, { scaleX: scaleX.value }],
     };
   });
 
   useEffect(() => {
-    rotation.value = withSequence(
-      withTiming(-5, { duration: 500 }),
-      withRepeat(withTiming(ANGLE, { duration: 1000 }), 1, true)
+    scaleY.value = withSequence(
+      withTiming(1.2, { duration: 500 }),
+      withTiming(1, { duration: 500 }),
+      withTiming(1.2, { duration: 500 }),
+      withTiming(1, { duration: 500 })
+    );
+    scaleX.value = withSequence(
+      withTiming(1.09, { duration: 500 }),
+      withTiming(1, { duration: 500 }),
+      withTiming(1.09, { duration: 500 }),
+      withTiming(1, { duration: 500 })
     );
   }, []);
   return (
