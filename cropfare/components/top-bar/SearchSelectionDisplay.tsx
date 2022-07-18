@@ -2,6 +2,7 @@ import React, { FunctionComponent } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import useDimensions from "../../hooks/useDimesions";
 import { fontSize, fontWeight, spacing } from "../../ui/designSystem";
+import Bubble from "../common/Bubble";
 
 export enum SearchCategory {
   DIARY,
@@ -35,6 +36,10 @@ const SearchSelectionDisplay: FunctionComponent<
         }}
       >
         <Text style={styles.searchText}> {searchText}</Text>
+        <View style={styles.bubbleContainer}>
+          <Bubble title={"Fruits"} />
+          <Bubble title={"Vegetables"} />
+        </View>
       </View>
     </>
   );
@@ -45,6 +50,11 @@ const styles = StyleSheet.create({
     fontSize: fontSize.l,
     fontStyle: "italic",
     fontWeight: fontWeight.bold,
+  },
+  bubbleContainer: {
+    marginTop: "3%",
+    flex: 1,
+    flexDirection: "row",
   },
 });
 

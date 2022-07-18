@@ -37,10 +37,10 @@ type CardProps = BaseCardProps & {
   onLongPress?: (event: GestureResponderEvent) => void;
 };
 
-const BaseCard: React.StatelessComponent<BaseCardProps> = ({
+const BaseCard: React.FunctionComponent<BaseCardProps> = ({
   children,
 }: CardProps) => <View style={styles.elevated}>{children}</View>;
-const Card: React.StatelessComponent<CardProps> = ({
+const Card: React.FunctionComponent<CardProps> = ({
   children,
   secondary,
   elevated,
