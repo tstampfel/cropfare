@@ -5,9 +5,11 @@ import {
   KeyboardAvoidingView,
   SafeAreaView,
   View,
+  Text,
 } from "react-native";
 import { spacing, color } from "../designSystem";
 import { ScrollView } from "react-native-gesture-handler";
+import TopBar from "../../components/top-bar/TopBar";
 
 const styles = StyleSheet.create({
   content: {
@@ -37,13 +39,13 @@ interface ScreenProps {
   withGutters?: boolean;
   // Set this to true when using a FlatList inside the content
   scrollable?: boolean;
+  header?: JSX.Element;
 }
 
 const Screen: FunctionComponent<ScreenProps> = ({
   children,
   backgroundColor,
-  withGutters = true,
-  scrollable = true,
+  header,
 }: ScreenProps) => {
   return (
     <KeyboardAvoidingView
@@ -52,30 +54,21 @@ const Screen: FunctionComponent<ScreenProps> = ({
         { backgroundColor: backgroundColor ? backgroundColor : color.white },
       ]}
     >
-      {scrollable ? (
+      {header ? (
+        <>
+          {header}
+          <ScrollView contentContainerStyle={styles.contentWrapper}>
+            <SafeAreaView style={styles.safeAreaView}>
+              <View style={[styles.content]}>{children}</View>
+            </SafeAreaView>
+          </ScrollView>
+        </>
+      ) : (
         <ScrollView contentContainerStyle={styles.contentWrapper}>
           <SafeAreaView style={styles.safeAreaView}>
-            <View
-              style={[
-                styles.content,
-                withGutters ? styles.screenGutters : undefined,
-              ]}
-            >
-              {children}
-            </View>
+            <View style={[styles.content]}>{children}</View>
           </SafeAreaView>
         </ScrollView>
-      ) : (
-        <SafeAreaView style={styles.safeAreaView}>
-          <View
-            style={[
-              styles.content,
-              withGutters ? styles.screenGutters : undefined,
-            ]}
-          >
-            {children}
-          </View>
-        </SafeAreaView>
       )}
     </KeyboardAvoidingView>
   );

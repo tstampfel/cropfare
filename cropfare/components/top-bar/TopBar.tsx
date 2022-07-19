@@ -5,6 +5,8 @@ import SearchIcon from "./SearchIcon";
 import SearchSelectionDisplay, {
   SearchCategory,
 } from "./SearchSelectionDisplay";
+import { View, StyleSheet } from "react-native";
+import { truncate } from "lodash";
 
 interface TopBarProps {
   text: string;
@@ -18,15 +20,15 @@ const TopBar: FunctionComponent<TopBarProps> = ({
   setIsSearchWindowVisible,
 }: TopBarProps) => {
   return (
-    <>
+    <View>
       <TopBarImage />
       <BarText text={text} name={name} />
       <SearchIcon setIsSearchWindowVisible={setIsSearchWindowVisible} />
       <SearchSelectionDisplay
-        searchText={`"Grapes"`}
+        searchText={truncate(`"Grapes"`, { length: 10 })}
         searchCategory={SearchCategory.DIARY}
       />
-    </>
+    </View>
   );
 };
 

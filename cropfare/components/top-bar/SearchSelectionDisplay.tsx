@@ -53,8 +53,9 @@ const styles = StyleSheet.create({
   },
   bubbleContainer: {
     marginTop: "3%",
-    flex: 1,
+    flexGrow: 1,
     flexDirection: "row",
+    marginBottom: "1%",
   },
 });
 
