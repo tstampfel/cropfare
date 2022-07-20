@@ -31,8 +31,8 @@ const SearchSelectionDisplay: FunctionComponent<
     <>
       <View
         style={{
-          marginTop: (windowHeight / 9) * -1,
-          marginLeft: windowWidth / 17,
+          marginTop: (windowHeight / 7) * -1,
+          marginLeft: windowWidth / 30,
         }}
       >
         <Text style={styles.searchText}> {searchText}</Text>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     marginTop: "3%",
     flexGrow: 1,
     flexDirection: "row",
-    marginBottom: "1%",
+    marginBottom: "3%",
   },
 });
 

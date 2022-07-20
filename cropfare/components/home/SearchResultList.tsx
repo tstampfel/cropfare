@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { View, StyleSheet, FlatList, Text, SafeAreaView } from "react-native";
+import ProductCard from "./ProductCard/ProductCard";
 
 interface SearchResultListProps {}
 
@@ -8,28 +9,56 @@ const SearchResultList: FunctionComponent<SearchResultListProps> = () => {
     <View>
       <FlatList
         data={[
-          { key: "Devin" },
-          { key: "Dan" },
-          { key: "Dominic" },
-          { key: "Jackson" },
-          { key: "James" },
-          { key: "Joel" },
-          { key: "John" },
-          { key: "Jillian" },
-          { key: "Jimmy" },
-          { key: "Julie1" },
-          { key: "Devin2" },
-          { key: "Dan3" },
-          { key: "Dominic4" },
-          { key: "Jackson5" },
-          { key: "James6" },
-          { key: "Joel7" },
-          { key: "John8" },
-          { key: "Jillian9" },
-          { key: "Jimmy22" },
-          { key: "Julie44" },
+          {
+            title: "Fresh Grapes",
+            description:
+              "Green seedless grapes are small to medium size and are round to slightly oval in shape, growing in tight or loose...",
+            companyName: "Cropfare",
+            price: 20,
+            currency: "EUR",
+            currencySymbol: "€",
+            location: "Brooklyn, New York",
+            delivery: "Self pickup",
+            rating: 4.8,
+          },
+          {
+            title: "Fresh Grapes 2",
+            description:
+              "Green seedless grapes are small to medium size and are round to slightly oval in shape, growing in tight or loose...",
+            companyName: "Cropfare",
+            price: 20,
+            currency: "EUR",
+            currencySymbol: "€",
+            location: "Brooklyn, New York",
+            delivery: "Self pickup",
+            rating: 4.8,
+          },
+          {
+            title: "Fresh Grapes",
+            description:
+              "Green seedless grapes are small to medium size and are round to slightly oval in shape, growing in tight or loose...",
+            companyName: "Cropfare",
+            price: 20,
+            currency: "EUR",
+            currencySymbol: "€",
+            location: "Brooklyn, New York",
+            delivery: "Self pickup",
+            rating: 4.8,
+          },
         ]}
-        renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
+        renderItem={({ item, index }) => (
+          <ProductCard
+            title={item.title}
+            description={item.description}
+            companyName={item.companyName}
+            price={item.price}
+            currency={item.currency}
+            currencySymbol={item.currencySymbol}
+            location={item.location}
+            delivery={item.delivery}
+            rating={item.rating}
+          />
+        )}
       />
     </View>
   );
