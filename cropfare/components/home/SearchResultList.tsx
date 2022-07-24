@@ -45,6 +45,30 @@ const SearchResultList: FunctionComponent<SearchResultListProps> = () => {
             delivery: "Self pickup",
             rating: 4.8,
           },
+          {
+            title: "Fresh Grapes 2",
+            description:
+              "Green seedless grapes are small to medium size and are round to slightly oval in shape, growing in tight or loose...",
+            companyName: "Cropfare",
+            price: 20,
+            currency: "EUR",
+            currencySymbol: "€",
+            location: "Brooklyn, New York",
+            delivery: "Self pickup",
+            rating: 4.8,
+          },
+          {
+            title: "Fresh Grapes",
+            description:
+              "Green seedless grapes are small to medium size and are round to slightly oval in shape, growing in tight or loose...",
+            companyName: "Cropfare",
+            price: 20,
+            currency: "EUR",
+            currencySymbol: "€",
+            location: "Brooklyn, New York",
+            delivery: "Self pickup",
+            rating: 4.8,
+          },
         ]}
         renderItem={({ item, index }) => (
           <ProductCard

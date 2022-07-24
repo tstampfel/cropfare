@@ -16,6 +16,11 @@ export enum color {
   green = "#24A54A",
   borderGray = "#BDBDBD",
   bronze = "#A35400",
+  silver = "#C0C0C0",
+  gold = "#FFD700",
+  textDescriptionGray = "#606060",
+  textGreen = "#3B6C3D",
+  buttonGreen = "#1A531C",
 }
 
 export enum badgeColor {

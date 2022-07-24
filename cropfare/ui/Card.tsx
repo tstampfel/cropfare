@@ -1,20 +1,14 @@
 import { FunctionComponent } from "react";
-import { View, StyleSheet, Text, Platform } from "react-native";
-import { color } from "./designSystem";
+import { View, StyleSheet, Text, Platform, Image } from "react-native";
 
 interface CardProps {
-  title: string;
+  children: React.ReactNode;
 }
 
-const Card: FunctionComponent<CardProps> = ({ title }: CardProps) => {
+const Card: FunctionComponent<CardProps> = ({ children }: CardProps) => {
   return (
     <View style={{ overflow: "hidden", paddingBottom: 2 }}>
-      <View style={styles.container}>
-        <Text> {title}</Text>
-        <Text> {title}</Text>
-        <Text> {title}</Text>
-        <Text> {title}</Text>
-      </View>
+      <View style={styles.container}>{children}</View>
     </View>
   );
 };
