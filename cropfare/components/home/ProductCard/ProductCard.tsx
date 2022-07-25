@@ -8,6 +8,9 @@ import Location from "../../../assets/svgs/location.svg";
 import CardDivider from "../../../assets/svgs/card-divider.svg";
 import Button from "../../common/Button";
 import Plus from "../../../assets/svgs/plus.svg";
+import StyledText from "react-native-styled-text";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 interface ProductCardProps {
   title: string;
@@ -65,7 +68,11 @@ const ProductCard: FunctionComponent<ProductCardProps> = ({
       </View>
       <View style={styles.bottomContent}>
         <View style={styles.priceContainer}>
-          <Text>{"Some text"}</Text>
+          <View style={styles.priceBubble}>
+            <StyledText
+              style={styles.priceText}
+            >{`<b>$${price}</b> / kg `}</StyledText>
+          </View>
         </View>
         <View style={styles.buttonContainer}>
           <Button
@@ -73,7 +80,7 @@ const ProductCard: FunctionComponent<ProductCardProps> = ({
             onPress={() => {
               console.log("Go to store");
             }}
-            icon={<Plus />}
+            icon={<FontAwesome name="cart-plus" size={20} color="white" />}
           />
         </View>
       </View>
@@ -82,12 +89,24 @@ const ProductCard: FunctionComponent<ProductCardProps> = ({
 };
 
 const styles = StyleSheet.create({
+  priceText: {
+    fontSize: fontSize.m,
+  },
+  priceBubble: {
+    padding: "5%",
+    backgroundColor: "#F3F9EB",
+    borderRadius: 20,
+    flexDirection: "row",
+    alignContent: "flex-end",
+  },
   bottomContent: {
     flexDirection: "row",
     marginBottom: "1%",
   },
   priceContainer: {
     flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
   buttonContainer: {
     justifyContent: "flex-end",
