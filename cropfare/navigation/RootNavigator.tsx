@@ -5,6 +5,7 @@ import {
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
+import HomeScreen from "../screens/HomeScreen";
 
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
@@ -22,8 +23,8 @@ export const RootNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Root"
-        component={BottomTabNavigator}
+        name="Home"
+        component={HomeScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen

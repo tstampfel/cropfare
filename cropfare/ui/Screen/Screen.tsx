@@ -40,12 +40,14 @@ interface ScreenProps {
   // Set this to true when using a FlatList inside the content
   scrollable?: boolean;
   header?: JSX.Element;
+  bottomMenu?: JSX.Element;
 }
 
 const Screen: FunctionComponent<ScreenProps> = ({
   children,
   backgroundColor,
   header,
+  bottomMenu,
 }: ScreenProps) => {
   return (
     <KeyboardAvoidingView
@@ -54,7 +56,7 @@ const Screen: FunctionComponent<ScreenProps> = ({
         { backgroundColor: backgroundColor ? backgroundColor : color.white },
       ]}
     >
-      {header ? (
+      {header || bottomMenu ? (
         <>
           {header}
           <ScrollView contentContainerStyle={styles.contentWrapper}>
@@ -62,6 +64,7 @@ const Screen: FunctionComponent<ScreenProps> = ({
               <View style={[styles.content]}>{children}</View>
             </SafeAreaView>
           </ScrollView>
+          {bottomMenu}
         </>
       ) : (
         <ScrollView contentContainerStyle={styles.contentWrapper}>

@@ -9,6 +9,7 @@ import useDimensions from "../hooks/useDimesions";
 import { color } from "../ui/designSystem";
 import SearchActionSheet from "../components/home/SearchActionSheet";
 import SearchResultList from "../components/home/SearchResultList";
+import BottomMenu from "../components/common/bottom-menu/BottomMenu";
 
 interface HomeScreenProps {}
 
@@ -25,6 +26,7 @@ const HomeScreen: FunctionComponent<HomeScreenProps> = () => {
             setIsSearchWindowVisible={setIsSearchWindowVisible}
           />
         }
+        bottomMenu={<BottomMenu />}
       >
         <SearchResultList />
       </Screen>
