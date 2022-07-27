@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import {
   View,
   StyleSheet,
@@ -14,27 +14,46 @@ import HomeActive from "../../../assets/svgs/home-active.svg";
 import FavoriteActive from "../../../assets/svgs/favorite-active.svg";
 import CartActive from "../../../assets/svgs/cart-active.svg";
 import ProfileActive from "../../../assets/svgs/profile-active.svg";
+import * as RootNavigation from "../../../navigation/RootNavigation";
+import { useFocusEffect } from "@react-navigation/native";
 
 interface BottomMenuProps {}
 
 const BottomMenu: FunctionComponent<BottomMenuProps> = () => {
   const dimensions = useWindowDimensions();
   const [activeMenu, setActiveMenu] = useState<
-    "home" | "favorite" | "cart" | "profile"
-  >("home");
+    "Home" | "Favorite" | "Cart" | "Profile"
+  >("Home");
+
+  useFocusEffect(
+    React.useCallback(() => {
+      if (RootNavigation.getCurrentRoute()?.name) {
+        setActiveMenu(
+          RootNavigation.getCurrentRoute()?.name as
+            | "Home"
+            | "Favorite"
+            | "Cart"
+            | "Profile"
+        );
+      }
+    }, [RootNavigation.getCurrentRoute()?.name])
+  );
 
   return (
     <View style={{ height: dimensions.height / 12, ...styles.container }}>
       <TouchableOpacity
         style={styles.menuItem}
-        onPress={() => setActiveMenu("home")}
+        onPress={() => {
+          setActiveMenu("Home");
+          RootNavigation.resetRoot("Home");
+        }}
       >
         <View style={styles.icon}>
-          {activeMenu === "home" ? <HomeActive /> : <Home />}
+          {activeMenu === "Home" ? <HomeActive /> : <Home />}
         </View>
         <Text
           style={
-            activeMenu === "home"
+            activeMenu === "Home"
               ? styles.menuItemTextActive
               : styles.menuItemText
           }
@@ -45,14 +64,17 @@ const BottomMenu: FunctionComponent<BottomMenuProps> = () => {
 
       <TouchableOpacity
         style={styles.menuItem}
-        onPress={() => setActiveMenu("cart")}
+        onPress={() => {
+          setActiveMenu("Cart");
+          RootNavigation.resetRoot("Cart");
+        }}
       >
         <View style={styles.icon}>
-          {activeMenu === "cart" ? <CartActive /> : <Cart />}
+          {activeMenu === "Cart" ? <CartActive /> : <Cart />}
         </View>
         <Text
           style={
-            activeMenu === "cart"
+            activeMenu === "Cart"
               ? styles.menuItemTextActive
               : styles.menuItemText
           }
@@ -63,14 +85,17 @@ const BottomMenu: FunctionComponent<BottomMenuProps> = () => {
 
       <TouchableOpacity
         style={styles.menuItem}
-        onPress={() => setActiveMenu("favorite")}
+        onPress={() => {
+          setActiveMenu("Favorite");
+          RootNavigation.resetRoot("Favorite");
+        }}
       >
         <View style={styles.icon}>
-          {activeMenu === "favorite" ? <FavoriteActive /> : <Favorite />}
+          {activeMenu === "Favorite" ? <FavoriteActive /> : <Favorite />}
         </View>
         <Text
           style={
-            activeMenu === "favorite"
+            activeMenu === "Favorite"
               ? styles.menuItemTextActive
               : styles.menuItemText
           }
@@ -81,14 +106,17 @@ const BottomMenu: FunctionComponent<BottomMenuProps> = () => {
 
       <TouchableOpacity
         style={styles.menuItem}
-        onPress={() => setActiveMenu("profile")}
+        onPress={() => {
+          setActiveMenu("Profile");
+          RootNavigation.resetRoot("Profile");
+        }}
       >
         <View style={styles.icon}>
-          {activeMenu === "profile" ? <ProfileActive /> : <Profile />}
+          {activeMenu === "Profile" ? <ProfileActive /> : <Profile />}
         </View>
         <Text
           style={
-            activeMenu === "profile"
+            activeMenu === "Profile"
               ? styles.menuItemTextActive
               : styles.menuItemText
           }

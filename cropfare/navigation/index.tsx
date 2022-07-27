@@ -14,6 +14,7 @@ import * as React from "react";
 import { ColorSchemeName } from "react-native";
 
 import LinkingConfiguration from "./LinkingConfiguration";
+import { navigationRef } from "./RootNavigation";
 import { RootNavigator } from "./RootNavigator";
 
 export default function Navigation({
@@ -23,6 +24,7 @@ export default function Navigation({
 }) {
   return (
     <NavigationContainer
+      ref={navigationRef}
       linking={LinkingConfiguration}
       theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
     >

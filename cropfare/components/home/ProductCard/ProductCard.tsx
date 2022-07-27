@@ -10,7 +10,6 @@ import Button from "../../common/Button";
 import Plus from "../../../assets/svgs/plus.svg";
 import StyledText from "react-native-styled-text";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import Ionicons from "@expo/vector-icons/Ionicons";
 
 interface ProductCardProps {
   title: string;
