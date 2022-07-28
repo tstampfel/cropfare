@@ -10,6 +10,7 @@ import Button from "../../common/Button";
 import Plus from "../../../assets/svgs/plus.svg";
 import StyledText from "react-native-styled-text";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import I18n from "i18n-js";
 
 interface ProductCardProps {
   title: string;
@@ -75,7 +76,7 @@ const ProductCard: FunctionComponent<ProductCardProps> = ({
         </View>
         <View style={styles.buttonContainer}>
           <Button
-            title={"Go to store"}
+            title={I18n.t("action.to_store")}
             onPress={() => {
               console.log("Go to store");
             }}

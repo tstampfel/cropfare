@@ -1,15 +1,10 @@
 import React, { FunctionComponent, useState } from "react";
 import Screen from "../ui/Screen/Screen";
-import { Text, Animated, View } from "react-native";
 import TopBar from "../components/top-bar/TopBar";
-import ActionSheetClass from "../ui/ActionSheet/ActionSheetClass";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import CancelButton from "./../assets/svgs/cancel-button.svg";
-import useDimensions from "../hooks/useDimesions";
-import { color } from "../ui/designSystem";
 import SearchActionSheet from "../components/home/SearchActionSheet";
 import SearchResultList from "../components/home/SearchResultList";
 import BottomMenu from "../components/common/bottom-menu/BottomMenu";
+import i18n from "i18n-js";
 
 interface HomeScreenProps {}
 
@@ -21,7 +16,7 @@ const HomeScreen: FunctionComponent<HomeScreenProps> = () => {
       <Screen
         header={
           <TopBar
-            text={"Welcome"}
+            text={i18n.t("welcome")}
             name={"Tomo"}
             setIsSearchWindowVisible={setIsSearchWindowVisible}
           />

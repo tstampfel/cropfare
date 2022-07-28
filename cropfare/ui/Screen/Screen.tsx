@@ -48,6 +48,7 @@ const Screen: FunctionComponent<ScreenProps> = ({
   backgroundColor,
   header,
   bottomMenu,
+  scrollable,
 }: ScreenProps) => {
   return (
     <KeyboardAvoidingView
@@ -56,14 +57,14 @@ const Screen: FunctionComponent<ScreenProps> = ({
         { backgroundColor: backgroundColor ? backgroundColor : color.white },
       ]}
     >
-      {header || bottomMenu ? (
+      {header || bottomMenu || !scrollable ? (
         <>
           {header}
-          <ScrollView contentContainerStyle={styles.contentWrapper}>
+          <View style={styles.contentWrapper}>
             <SafeAreaView style={styles.safeAreaView}>
               <View style={[styles.content]}>{children}</View>
             </SafeAreaView>
-          </ScrollView>
+          </View>
           {bottomMenu}
         </>
       ) : (

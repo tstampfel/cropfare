@@ -1,5 +1,6 @@
+import I18n from "i18n-js";
 import React, { FunctionComponent } from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import BottomMenu from "../components/common/bottom-menu/BottomMenu";
 import Screen from "../ui/Screen/Screen";
 
@@ -10,7 +11,13 @@ const CartScreen: FunctionComponent<CartScreenProps> = () => {
     <>
       <Screen bottomMenu={<BottomMenu />}>
         <View>
-          <Text>{"CartScreen"}</Text>
+          <TouchableOpacity
+            onPress={() => {
+              I18n.locale = "hr";
+            }}
+          >
+            <Text>{"CartScreen"}</Text>
+          </TouchableOpacity>
         </View>
       </Screen>
     </>
