@@ -27,6 +27,7 @@ i18n.translations = {
 };
 
 i18n.locale = Localization.locale;
+i18n.fallbacks = true;
 
 Sentry.init({
   dsn: "https://1ea3c910775548bd9e57f317b209ce53@o1300250.ingest.sentry.io/6534414",
