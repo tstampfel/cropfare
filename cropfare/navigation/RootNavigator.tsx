@@ -11,11 +11,11 @@ import HomeScreen from "../screens/HomeScreen";
 
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
-import ProfileScreen from "../screens/ProfileScreen";
 
 import { RootStackParamList } from "../types";
 
 import { createNavigationContainerRef } from "@react-navigation/native";
+import { BottomTabNavigator } from "./BottomTabNavigator";
 
 /**
  * A root stack navigator is often used for displaying modals on top of all other content.
@@ -28,22 +28,7 @@ export const RootNavigator = () => {
     <Stack.Navigator>
       <Stack.Screen
         name="Home"
-        component={HomeScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Favorite"
-        component={FavoritesScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Cart"
-        component={CartScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Profile"
-        component={ProfileScreen}
+        component={BottomTabNavigator}
         options={{ headerShown: false }}
       />
       <Stack.Screen

@@ -6,10 +6,22 @@ import { Pressable } from "react-native";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
+import CartScreen from "../screens/CartScreen";
 import HomeScreen from "../screens/HomeScreen";
 import TabOneScreen from "../screens/TabOneScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
 import { RootTabParamList, RootTabScreenProps } from "../types";
+import * as RootNavigation from "./../navigation/RootNavigation";
+import HomeActive from "./../assets/svgs/home-active.svg";
+import Home from "./../assets/svgs/home.svg";
+import Favorite from "./../assets/svgs/favorite.svg";
+import Cart from "./../assets/svgs/cart.svg";
+import Profile from "./../assets/svgs/profile.svg";
+import FavoriteActive from "./../assets/svgs/favorite-active.svg";
+import CartActive from "./../assets/svgs/cart-active.svg";
+import ProfileActive from "./../assets/svgs/profile-active.svg";
+import FavoritesScreen from "../screens/FavoritesScreen";
+import ProfileScreen from "../screens/ProfileScreen";
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
@@ -20,25 +32,46 @@ export function BottomTabNavigator() {
     <BottomTab.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
+        tabBarActiveTintColor: "#7A9E4A",
         headerShown: false,
+        tabBarShowLabel: false,
       }}
     >
       <BottomTab.Screen
         name="Home"
         component={HomeScreen}
-        options={{ title: "Something" }}
-        // options={({ navigation }: RootTabScreenProps<"Home">) => ({
-        //   tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        // })}
+        options={({ navigation }: RootTabScreenProps<"Home">) => ({
+          tabBarIcon: ({ focused }) => {
+            return focused ? <HomeActive /> : <Home />;
+          },
+        })}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoScreen}
-        // options={{
-        //   title: "Tab Two",
-        //   tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        // }}
+        name="Cart"
+        component={CartScreen}
+        options={() => ({
+          tabBarIcon: ({ focused }) => {
+            return focused ? <CartActive /> : <Cart />;
+          },
+        })}
+      />
+      <BottomTab.Screen
+        name="Favorite"
+        component={FavoritesScreen}
+        options={() => ({
+          tabBarIcon: ({ focused }) => {
+            return focused ? <FavoriteActive /> : <Favorite />;
+          },
+        })}
+      />
+      <BottomTab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={() => ({
+          tabBarIcon: ({ focused }) => {
+            return focused ? <ProfileActive /> : <Profile />;
+          },
+        })}
       />
     </BottomTab.Navigator>
   );

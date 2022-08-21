@@ -7,7 +7,7 @@ interface ProfileScreenProps {}
 
 const ProfileScreen: FunctionComponent<ProfileScreenProps> = () => {
   return (
-    <Screen bottomMenu={<BottomMenu />}>
+    <Screen>
       <View>
         <Text>{"ProfileScreen"}</Text>
       </View>

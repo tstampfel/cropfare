@@ -8,7 +8,7 @@ interface FavoritesScreenProps {}
 
 const FavoritesScreen: FunctionComponent<FavoritesScreenProps> = () => {
   return (
-    <Screen bottomMenu={<BottomMenu />}>
+    <Screen>
       <TouchableOpacity
         onPress={() => {
           I18n.locale = "en";

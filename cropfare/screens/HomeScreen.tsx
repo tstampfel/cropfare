@@ -21,7 +21,6 @@ const HomeScreen: FunctionComponent<HomeScreenProps> = () => {
             setIsSearchWindowVisible={setIsSearchWindowVisible}
           />
         }
-        bottomMenu={<BottomMenu />}
       >
         <SearchResultList />
       </Screen>

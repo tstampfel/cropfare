@@ -9,7 +9,7 @@ interface CartScreenProps {}
 const CartScreen: FunctionComponent<CartScreenProps> = () => {
   return (
     <>
-      <Screen bottomMenu={<BottomMenu />}>
+      <Screen>
         <View>
           <TouchableOpacity
             onPress={() => {

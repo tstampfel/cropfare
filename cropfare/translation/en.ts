@@ -3,4 +3,10 @@ export const en = {
   action: {
     to_store: "Go to Store",
   },
+  navigation: {
+    home: "Home",
+    cart: "Cart",
+    profile: "Profile",
+    favorites: "Favorites",
+  },
 };
