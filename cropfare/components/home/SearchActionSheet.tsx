@@ -57,22 +57,6 @@ const SearchActionSheet: FunctionComponent<SearchActionSheetProps> = ({
 
           <View>
             <Text>{"ActionSheet"}</Text>
-            <Text>{"ActionSheet"}</Text>
-            <Text>{"ActionSheet"}</Text>
-            <Text>{"ActionSheet"}</Text>
-            <Text>{"ActionSheet"}</Text>
-            <Text>{"ActionSheet"}</Text>
-            <Text>{"ActionSheet"}</Text>
-            <Text>{"ActionSheet"}</Text>
-            <Text>{"ActionSheet"}</Text>
-            <Text>{"ActionSheet"}</Text>
-            <Text>{"ActionSheet"}</Text>
-            <Text>{"ActionSheet"}</Text>
-            <Text>{"ActionSheet"}</Text>
-            <Text>{"ActionSheet"}</Text>
-            <Text>{"ActionSheet"}</Text>
-            <Text>{"ActionSheet"}</Text>
-            <Text>{"ActionSheet"}</Text>
           </View>
         </>
       }
